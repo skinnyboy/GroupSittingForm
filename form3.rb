@@ -3,6 +3,10 @@ require 'pony'
 
 Encoding.default_external = 'utf-8'
 
+configure do
+    set :protection, except: [:frame_options]
+end
+
 def ponysend
   Pony.mail({
     :to      => 'webmaster@mahi.dhamma.org',
